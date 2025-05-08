@@ -1,0 +1,22 @@
+CREATE DATABASE todo_app;
+
+USE todo_app;
+
+CREATE TABLE users(
+id INT(5) AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(50) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL
+);
+
+SELECT * FROM users;
+
+CREATE table todos (
+id INT(5) PRIMARY KEY AUTO_INCREMENT,
+text VARCHAR(255) NOT NULL,
+user_id INT(5),
+completed BOOLEAN DEFAULT false,
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+SELECT * FROM todos;
