@@ -1,10 +1,10 @@
-import { CheckIcon, Loader2Icon, PlusIcon, Trash2Icon } from "lucide-react";
+import { Loader2Icon, PlusIcon } from "lucide-react";
 import useTodoStore from "../stores/useTodoStore";
 import { useEffect, useState } from "react";
 import TodoItem from "../components/TodoItem";
 
 export default function HomeComponent() {
-  const { todos, todoRes, getTodos, addTodo, addingTodo } = useTodoStore();
+  const { todos, getTodos, addTodo, addingTodo } = useTodoStore();
   const [text, setText] = useState("");
 
   const handleAddTodo = async () => {

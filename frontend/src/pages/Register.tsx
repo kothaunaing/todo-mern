@@ -1,11 +1,11 @@
 import { AtSign, EyeIcon, EyeOff, LockIcon, UserIcon } from "lucide-react";
-import { use, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useError from "../hooks/useError";
 import useAuthStore from "../stores/useAuthStore";
 
 const RegisterPage = () => {
-  const { register, loadingRegister, setLoadingRegister } = useAuthStore();
+  const { register, setLoadingRegister } = useAuthStore();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",

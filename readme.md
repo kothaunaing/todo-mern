@@ -1,0 +1,14 @@
+## This is my todo web app project
+
+## Env file
+
+```.env
+
+PORT=5000
+DB_HOST=DB_HOST
+DB_USER=YOUR USER NAME
+DB_PASS=YOUR DB PASSWORD
+DB_NAME=YOUR DB NAME
+JWT_SECRET=YOUR JWT SECRET
+
+```
