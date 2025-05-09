@@ -5,7 +5,7 @@ import useError from "../hooks/useError";
 import useAuthStore from "../stores/useAuthStore";
 
 const RegisterPage = () => {
-  const { register, setLoadingRegister } = useAuthStore();
+  const { register, setLoadingRegister, loadingRegister } = useAuthStore();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -100,8 +100,12 @@ const RegisterPage = () => {
             </label>
           </div>
           <div>{error && <p className="text-error">{error}</p>}</div>
-          <button type="submit" className="btn w-full btn-primary">
-            Register
+          <button
+            disabled={loadingRegister}
+            type="submit"
+            className="btn w-full btn-primary"
+          >
+            {loadingRegister ? "Loading..." : "Register"}
           </button>
         </form>
 
