@@ -6,16 +6,15 @@ import path from "path";
 configDotenv();
 const app = express();
 const PORT = process.env.PORT;
-const __dirname = path.resolve();
 
 app.use(express.json());
 app.use("/api", allRoutes);
 
 if (process.env.NODE_ENV === "prod") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
   app.get("*", (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "../../frontend", "dist", "index.html"));
   });
 }
 
