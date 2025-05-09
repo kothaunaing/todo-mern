@@ -11,7 +11,7 @@ const __dirname = path.resolve();
 app.use(express.json());
 app.use("/api", allRoutes);
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "prod") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("*", (req: Request, res: Response) => {
