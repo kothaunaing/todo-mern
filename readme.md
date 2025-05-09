@@ -12,3 +12,28 @@ DB_NAME=YOUR DB NAME
 JWT_SECRET=YOUR JWT SECRET
 
 ```
+
+```mysql
+CREATE DATABASE todo_app;
+
+USE todo_app;
+
+CREATE TABLE users(
+id INT(5) AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(50) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL
+);
+
+SELECT * FROM users;
+
+CREATE table todos (
+id VARCHAR(36) PRIMARY KEY,
+text VARCHAR(255) NOT NULL,
+user_id INT(5),
+completed BOOLEAN DEFAULT false,
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+SELECT * FROM todos;
+```
