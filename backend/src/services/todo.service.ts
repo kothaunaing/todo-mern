@@ -8,11 +8,11 @@ const ITEMS_PER_PAGE = 20;
 
 export async function getAllTodosByUserId(userId: string, page: number = 1) {
   const user = await getUserByUserId(userId);
-  const offset = (page - 1) * ITEMS_PER_PAGE;
+  // const offset = (page - 1) * ITEMS_PER_PAGE;
 
   const results = await pool.query(
-    "SELECT * FROM todos WHERE user_id = ? LIMIT ? OFFSET ?",
-    [user?.id, ITEMS_PER_PAGE, offset]
+    "SELECT * FROM todos WHERE user_id = ? ORDER BY id DESC",
+    [user?.id]
   );
 
   const todos = results[0] as ToDoType[];

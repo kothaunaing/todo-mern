@@ -12,6 +12,6 @@ router.post("/register", registerController);
 
 router.post("/login", loginController);
 
-router.post("/check-auth", verifyToken, checkAuthController);
+router.get("/check-auth", verifyToken, checkAuthController);
 
 export default router;
