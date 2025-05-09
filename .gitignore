@@ -13,7 +13,5 @@ backend/.env
 frontend/.env
 
 # build
-dist
-build
+
 frontend/dist
-backend/dist
